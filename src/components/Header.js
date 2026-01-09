@@ -1,10 +1,18 @@
-import { Navbar, Container } from "react-bootstrap";
+import { Button, Container, Navbar } from "react-bootstrap";
 
-function Header() {
+function Header({ battleEnabled }) {
   return (
     <Navbar bg="dark" variant="dark" className="mb-4 rounded">
-      <Container>
-        <Navbar.Brand>Pokeverse | All Pokémon</Navbar.Brand>
+      <Container className="d-flex justify-content-between">
+        <Navbar.Brand className="fw-bold">Pokeverse</Navbar.Brand>
+
+        <Button
+          variant="danger"
+          disabled={!battleEnabled}
+          aria-disabled={!battleEnabled}
+        >
+          Battle
+        </Button>
       </Container>
     </Navbar>
   );
